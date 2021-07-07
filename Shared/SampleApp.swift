@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct SampleApp: App {
+    let store = AppStore(
+      initial: AppState(),
+      reducer: appReducer,
+      middlewares: [])
+    
+    init() {
+      store.dispatch(.all)
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(store)
         }
     }
 }

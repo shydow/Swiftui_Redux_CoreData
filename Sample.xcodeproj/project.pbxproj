@@ -13,6 +13,12 @@
 		DFED381A2692DD5900DC360E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED380A2692DD5800DC360E /* ContentView.swift */; };
 		DFED381B2692DD5900DC360E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFED380B2692DD5900DC360E /* Assets.xcassets */; };
 		DFED381C2692DD5900DC360E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFED380B2692DD5900DC360E /* Assets.xcassets */; };
+		DFED38292692DD8C00DC360E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED38282692DD8C00DC360E /* Item.swift */; };
+		DFED382A2692DD8F00DC360E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED38282692DD8C00DC360E /* Item.swift */; };
+		DFED382C2692DDC300DC360E /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED382B2692DDC300DC360E /* Framework.swift */; };
+		DFED382F2692DE6A00DC360E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED382E2692DE6A00DC360E /* App.swift */; };
+		DFED38312692E02300DC360E /* ItemDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED38302692E02300DC360E /* ItemDao.swift */; };
+		DFED38322692E02300DC360E /* ItemDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED38302692E02300DC360E /* ItemDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +27,10 @@
 		DFED380B2692DD5900DC360E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFED38102692DD5900DC360E /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFED38162692DD5900DC360E /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFED38282692DD8C00DC360E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		DFED382B2692DDC300DC360E /* Framework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
+		DFED382E2692DE6A00DC360E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		DFED38302692E02300DC360E /* ItemDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +62,11 @@
 		DFED38082692DD5800DC360E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DFED382D2692DE4D00DC360E /* Repositories */,
+				DFED38272692DD6E00DC360E /* Redux */,
+				DFED38262692DD6700DC360E /* Models */,
+				DFED38252692DD6100DC360E /* Views */,
 				DFED38092692DD5800DC360E /* SampleApp.swift */,
-				DFED380A2692DD5800DC360E /* ContentView.swift */,
 				DFED380B2692DD5900DC360E /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -66,6 +79,39 @@
 				DFED38162692DD5900DC360E /* Sample.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DFED38252692DD6100DC360E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DFED380A2692DD5800DC360E /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DFED38262692DD6700DC360E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DFED38282692DD8C00DC360E /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DFED38272692DD6E00DC360E /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				DFED382B2692DDC300DC360E /* Framework.swift */,
+				DFED382E2692DE6A00DC360E /* App.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		DFED382D2692DE4D00DC360E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DFED38302692E02300DC360E /* ItemDao.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +212,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFED382C2692DDC300DC360E /* Framework.swift in Sources */,
 				DFED38192692DD5900DC360E /* ContentView.swift in Sources */,
+				DFED38292692DD8C00DC360E /* Item.swift in Sources */,
 				DFED38172692DD5900DC360E /* SampleApp.swift in Sources */,
+				DFED382F2692DE6A00DC360E /* App.swift in Sources */,
+				DFED38312692E02300DC360E /* ItemDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFED381A2692DD5900DC360E /* ContentView.swift in Sources */,
+				DFED382A2692DD8F00DC360E /* Item.swift in Sources */,
 				DFED38182692DD5900DC360E /* SampleApp.swift in Sources */,
+				DFED38322692E02300DC360E /* ItemDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +361,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,7 +391,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
