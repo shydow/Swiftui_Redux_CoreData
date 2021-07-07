@@ -10,15 +10,21 @@ import Foundation
 struct ItemDao {
     static let shared = ItemDao()
     
+    private var dataManager: CoreDataManager
+    
     private init() {
-        
+        dataManager = CoreDataManager.preview
     }
     
     func loadAll() -> [Item] {
-        var result: [Item] = []
-        for _ in 0 ... 10 {
-            result.append(Item())
+        let context = dataManager.container.viewContext
+        let request = ManagedItem.fetchRequest()
+        request.predicate = NSPredicate(format: "TRUEPREDICATE")
+        do {
+            let result = try context.fetch(request)
+            return result.map{ $0.transform() }
+        } catch {
+            return []
         }
-        return result
     }
 }
