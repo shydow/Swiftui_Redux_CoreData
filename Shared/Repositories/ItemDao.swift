@@ -22,7 +22,7 @@ struct ItemDao {
         request.predicate = NSPredicate(format: "TRUEPREDICATE")
         do {
             let result = try context.fetch(request)
-            return result.map{ $0.transform() }
+            return result.map{ $0.getItem() }
         } catch {
             return []
         }

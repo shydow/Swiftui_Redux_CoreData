@@ -14,12 +14,21 @@ struct CoreDataManager {
     static var preview: CoreDataManager = {
         let result = CoreDataManager(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = ManagedItem(context: viewContext)
-            let item = Item()
-            newItem.id = item.id
-            newItem.timestamp = item.timestamp
+        
+        for user in User.sampleUsers {
+            let newUser = ManagedUser(context: viewContext)
+            newUser.id = user.id
+            newUser.name = user.name
+            
+            for _ in 0..<10 {
+                let item = Item(user: user)
+                let newItem = ManagedItem(context: viewContext)
+                newItem.id = item.id
+                newItem.timestamp = item.timestamp
+                newItem.user = newUser
+            }
         }
+        
         do {
             try viewContext.save()
         } catch {

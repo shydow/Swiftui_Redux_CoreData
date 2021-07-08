@@ -8,9 +8,11 @@
 import Foundation
 
 extension ManagedItem {
-    func transform() -> Item {
-        return Item(id: self.id!, timestamp: self.timestamp!)
+    func getItem() -> Item {
+        let id = self.id
+        let timestamp = self.timestamp
+        let user = self.user?.getUser()
+        
+        return Item(id: id!, timestamp: timestamp!, user: user!)
     }
-    
-    
 }

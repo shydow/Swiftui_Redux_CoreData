@@ -13,6 +13,10 @@
 		DF8C71302695465C00C0240C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF8C712D2695465C00C0240C /* Model.xcdatamodeld */; };
 		DF8C71382695471900C0240C /* Item+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C71372695471900C0240C /* Item+CoreData.swift */; };
 		DF8C71392695471900C0240C /* Item+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C71372695471900C0240C /* Item+CoreData.swift */; };
+		DFE9200F26959EC300736A6B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE9200E26959EC300736A6B /* User.swift */; };
+		DFE9201026959EC300736A6B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE9200E26959EC300736A6B /* User.swift */; };
+		DFE920122695A0A200736A6B /* User+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE920112695A0A200736A6B /* User+CoreData.swift */; };
+		DFE920132695A0A200736A6B /* User+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE920112695A0A200736A6B /* User+CoreData.swift */; };
 		DFED38172692DD5900DC360E /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED38092692DD5800DC360E /* SampleApp.swift */; };
 		DFED38182692DD5900DC360E /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED38092692DD5800DC360E /* SampleApp.swift */; };
 		DFED38192692DD5900DC360E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED380A2692DD5800DC360E /* ContentView.swift */; };
@@ -31,6 +35,8 @@
 		DF8C712A2695454F00C0240C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DF8C712E2695465C00C0240C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DF8C71372695471900C0240C /* Item+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreData.swift"; sourceTree = "<group>"; };
+		DFE9200E26959EC300736A6B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DFE920112695A0A200736A6B /* User+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreData.swift"; sourceTree = "<group>"; };
 		DFED38092692DD5800DC360E /* SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp.swift; sourceTree = "<group>"; };
 		DFED380A2692DD5800DC360E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DFED380B2692DD5900DC360E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				DFED38282692DD8C00DC360E /* Item.swift */,
+				DFE9200E26959EC300736A6B /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 				DF8C712A2695454F00C0240C /* CoreDataManager.swift */,
 				DF8C712D2695465C00C0240C /* Model.xcdatamodeld */,
 				DF8C71372695471900C0240C /* Item+CoreData.swift */,
+				DFE920112695A0A200736A6B /* User+CoreData.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -227,11 +235,13 @@
 				DFED382C2692DDC300DC360E /* Framework.swift in Sources */,
 				DF8C71382695471900C0240C /* Item+CoreData.swift in Sources */,
 				DFED38192692DD5900DC360E /* ContentView.swift in Sources */,
+				DFE920122695A0A200736A6B /* User+CoreData.swift in Sources */,
 				DFED38292692DD8C00DC360E /* Item.swift in Sources */,
 				DF8C712F2695465C00C0240C /* Model.xcdatamodeld in Sources */,
 				DFED38172692DD5900DC360E /* SampleApp.swift in Sources */,
 				DFED382F2692DE6A00DC360E /* App.swift in Sources */,
 				DF8C712B2695454F00C0240C /* CoreDataManager.swift in Sources */,
+				DFE9200F26959EC300736A6B /* User.swift in Sources */,
 				DFED38312692E02300DC360E /* ItemDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,7 +253,9 @@
 				DFED381A2692DD5900DC360E /* ContentView.swift in Sources */,
 				DFED382A2692DD8F00DC360E /* Item.swift in Sources */,
 				DFED38182692DD5900DC360E /* SampleApp.swift in Sources */,
+				DFE920132695A0A200736A6B /* User+CoreData.swift in Sources */,
 				DF8C712C2695454F00C0240C /* CoreDataManager.swift in Sources */,
+				DFE9201026959EC300736A6B /* User.swift in Sources */,
 				DFED38322692E02300DC360E /* ItemDao.swift in Sources */,
 				DF8C71392695471900C0240C /* Item+CoreData.swift in Sources */,
 				DF8C71302695465C00C0240C /* Model.xcdatamodeld in Sources */,

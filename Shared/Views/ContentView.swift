@@ -15,7 +15,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(store.state.items) { item in
-                Text(item.id)
+                HStack {
+                    Text(item.id)
+                    Text(item.user.name)
+                }
                     .onTapGesture {
                         store.dispatch(.delete(id: item.id))
                     }
@@ -40,7 +43,9 @@ struct AddView: View {
     
     var body: some View {
         Button("Add") {
-            store.dispatch(.save(item: Item()))
+            let user = User.create()
+            
+            store.dispatch(.save(item: Item(user: user)))
             self.showForm = false
         }
     }

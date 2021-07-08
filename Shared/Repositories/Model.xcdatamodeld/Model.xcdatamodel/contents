@@ -3,8 +3,15 @@
     <entity name="ManagedItem" representedClassName="ManagedItem" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedUser" inverseName="items" inverseEntity="ManagedUser"/>
+    </entity>
+    <entity name="ManagedUser" representedClassName="ManagedUser" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ManagedItem" inverseName="user" inverseEntity="ManagedItem"/>
     </entity>
     <elements>
-        <element name="ManagedItem" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="ManagedItem" positionX="51.98272705078125" positionY="-173.3572692871094" width="128" height="88"/>
+        <element name="ManagedUser" positionX="-63" positionY="0" width="128" height="88"/>
     </elements>
 </model>

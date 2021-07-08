@@ -10,4 +10,7 @@ import Foundation
 struct Item: Identifiable {
     var id: String = UUID().uuidString
     var timestamp: Date = Date()
+    
+    var user: User
+    
 }
