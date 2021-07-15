@@ -11,36 +11,11 @@ import CoreData
 struct CoreDataManager {
     static let shared = CoreDataManager()
 
-    static var preview: CoreDataManager = {
-        let result = CoreDataManager(inMemory: true)
-        let viewContext = result.container.viewContext
-        
-        for user in User.sampleUsers {
-            let newUser = ManagedUser(context: viewContext)
-            newUser.id = user.id
-            newUser.name = user.name
-            
-            for _ in 0..<10 {
-                let item = Item(user: user)
-                let newItem = ManagedItem(context: viewContext)
-                newItem.id = item.id
-                newItem.timestamp = item.timestamp
-                newItem.user = newUser
-            }
-        }
-        
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
-    }()
-
-    let container: NSPersistentCloudKitContainer
+    private let container: NSPersistentCloudKitContainer
+    
+    var context: NSManagedObjectContext {
+        container.viewContext
+    }
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Model")
@@ -63,5 +38,32 @@ struct CoreDataManager {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
+        prepareData()
+    }
+    
+    func prepareData() {
+        for user in User.sampleUsers {
+            let newUser = ManagedUser(context: context)
+            newUser.id = user.id
+            newUser.name = user.name
+            
+            for _ in 0..<10 {
+                let item = Item(user: user)
+                let newItem = ManagedItem(context: context)
+                newItem.id = item.id
+                newItem.timestamp = item.timestamp
+                newItem.user = newUser
+            }
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }

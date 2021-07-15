@@ -6,25 +6,33 @@
 //
 
 import Foundation
+import CoreData
 
-struct ItemDao {
+struct ItemDao: CoreDataWrapper {
+    typealias M = Item
+    
+    typealias E = ManagedItem
+    
     static let shared = ItemDao()
     
-    private var dataManager: CoreDataManager
+    private init() { }
     
-    private init() {
-        dataManager = CoreDataManager.preview
+    static func transform(from entity: ManagedItem) -> Item {
+        let user = User(id: (entity.user?.id)!, name: (entity.user?.name)!)
+        
+        return Item(id: entity.id!, timestamp: entity.timestamp!, user: user)
     }
     
-    func loadAll() -> [Item] {
-        let context = dataManager.container.viewContext
-        let request = ManagedItem.fetchRequest()
-        request.predicate = NSPredicate(format: "TRUEPREDICATE")
-        do {
-            let result = try context.fetch(request)
-            return result.map{ $0.getItem() }
-        } catch {
-            return []
-        }
+    static func transform(from model: Item, context: NSManagedObjectContext) -> ManagedItem {
+        var mUser = ManagedUser(context: context)
+        mUser.id = model.user.id
+        mUser.name = model.user.name
+        
+        var mItem = ManagedItem(context: context)
+        mItem.id = model.id
+        mItem.timestamp = model.timestamp
+        mItem.user = mUser
+        
+        return mItem
     }
 }
