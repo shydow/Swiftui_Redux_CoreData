@@ -7,20 +7,50 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentContainerView: View {
     @EnvironmentObject var store: AppStore
     
     @State var showForm: Bool = false
     
     var body: some View {
+        ContentView(showForm: $showForm, items: store.state.items, save: save, delete: delete).onAppear(perform: load)
+    }
+    
+    private func load() {
+        store.dispatch(.all)
+    }
+    
+    private func save() {
+        let user = User.create()
+        
+        store.dispatch(.save(item: Item(user: user)))
+        self.showForm = false
+    }
+    
+    private func delete(_ id: String) {
+        store.dispatch(.delete(id: id))
+    }
+    
+}
+
+struct ContentView: View {
+    @Binding var showForm: Bool
+    
+    var items: [Item]
+    
+    let save: () -> Void
+    
+    let delete: (_ id: String) -> Void
+    
+    var body: some View {
         NavigationView {
-            List(store.state.items) { item in
+            List(items) { item in
                 HStack {
                     Text(item.id)
                     Text(item.user.name)
                 }
                     .onTapGesture {
-                        store.dispatch(.delete(id: item.id))
+                        delete(item.id)
                     }
             }
             .navigationTitle("List")
@@ -30,30 +60,26 @@ struct ContentView: View {
                 Image(systemName: "plus.circle")
             }))
             .sheet(isPresented: $showForm) {
-                AddView(showForm: $showForm)
+                AddView(showForm: $showForm, save: save)
             }
         }
     }
 }
 
 struct AddView: View {
-    @EnvironmentObject var store: AppStore
-    
     @Binding var showForm: Bool
+    
+    var save: () -> Void
     
     var body: some View {
         Button("Add") {
-            let user = User.create()
-            
-            store.dispatch(.save(item: Item(user: user)))
-            self.showForm = false
+            save()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .environmentObject(AppStore.preview)
+        ContentContainerView()
     }
 }

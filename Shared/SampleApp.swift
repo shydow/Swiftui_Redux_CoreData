@@ -20,7 +20,7 @@ struct SampleApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(store)
+            ContentContainerView().environmentObject(store)
         }
     }
 }

@@ -24,11 +24,11 @@ struct ItemDao: CoreDataWrapper {
     }
     
     static func transform(from model: Item, context: NSManagedObjectContext) -> ManagedItem {
-        var mUser = ManagedUser(context: context)
+        let mUser = ManagedUser(context: context)
         mUser.id = model.user.id
         mUser.name = model.user.name
         
-        var mItem = ManagedItem(context: context)
+        let mItem = ManagedItem(context: context)
         mItem.id = model.id
         mItem.timestamp = model.timestamp
         mItem.user = mUser

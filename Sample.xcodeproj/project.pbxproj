@@ -20,8 +20,8 @@
 		DFE9201026959EC300736A6B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE9200E26959EC300736A6B /* User.swift */; };
 		DFED38172692DD5900DC360E /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED38092692DD5800DC360E /* SampleApp.swift */; };
 		DFED38182692DD5900DC360E /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED38092692DD5800DC360E /* SampleApp.swift */; };
-		DFED38192692DD5900DC360E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED380A2692DD5800DC360E /* ContentView.swift */; };
-		DFED381A2692DD5900DC360E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED380A2692DD5800DC360E /* ContentView.swift */; };
+		DFED38192692DD5900DC360E /* ContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED380A2692DD5800DC360E /* ContentContainerView.swift */; };
+		DFED381A2692DD5900DC360E /* ContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED380A2692DD5800DC360E /* ContentContainerView.swift */; };
 		DFED381B2692DD5900DC360E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFED380B2692DD5900DC360E /* Assets.xcassets */; };
 		DFED381C2692DD5900DC360E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFED380B2692DD5900DC360E /* Assets.xcassets */; };
 		DFED38292692DD8C00DC360E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED38282692DD8C00DC360E /* Item.swift */; };
@@ -40,7 +40,7 @@
 		DFAA9742269FDF6D0021CDE1 /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
 		DFE9200E26959EC300736A6B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DFED38092692DD5800DC360E /* SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp.swift; sourceTree = "<group>"; };
-		DFED380A2692DD5800DC360E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DFED380A2692DD5800DC360E /* ContentContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerView.swift; sourceTree = "<group>"; };
 		DFED380B2692DD5900DC360E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFED38102692DD5900DC360E /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFED38162692DD5900DC360E /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +112,7 @@
 		DFED38252692DD6100DC360E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DFED380A2692DD5800DC360E /* ContentView.swift */,
+				DFED380A2692DD5800DC360E /* ContentContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFED382C2692DDC300DC360E /* Framework.swift in Sources */,
-				DFED38192692DD5900DC360E /* ContentView.swift in Sources */,
+				DFED38192692DD5900DC360E /* ContentContainerView.swift in Sources */,
 				DFED38292692DD8C00DC360E /* Item.swift in Sources */,
 				DF8C712F2695465C00C0240C /* Model.xcdatamodeld in Sources */,
 				DFED38172692DD5900DC360E /* SampleApp.swift in Sources */,
@@ -261,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFED381A2692DD5900DC360E /* ContentView.swift in Sources */,
+				DFED381A2692DD5900DC360E /* ContentContainerView.swift in Sources */,
 				DFED382A2692DD8F00DC360E /* Item.swift in Sources */,
 				DFED38182692DD5900DC360E /* SampleApp.swift in Sources */,
 				DF712132269BF1A900F26E34 /* App.swift in Sources */,

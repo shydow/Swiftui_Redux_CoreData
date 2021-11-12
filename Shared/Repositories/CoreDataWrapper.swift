@@ -19,7 +19,6 @@ protocol CoreDataWrapper {
 extension CoreDataWrapper {
     func save(model: M) {
         let context = CoreDataManager.shared.context
-        let entity = Self.transform(from: model, context: context)
         
         do {
             try context.save()
