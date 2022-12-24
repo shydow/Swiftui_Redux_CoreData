@@ -54,11 +54,20 @@ struct ContentView: View {
                     }
             }
             .navigationTitle("List")
-            .navigationBarItems(trailing: Button(action: {
-                showForm.toggle()
-            }, label: {
-                Image(systemName: "plus.circle")
-            }))
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button(action: {
+                        showForm.toggle()
+                    }, label: {
+                        Image(systemName: "plus.circle")
+                    })
+                }
+            }
+//            .navigationBarItems(trailing: Button(action: {
+//                showForm.toggle()
+//            }, label: {
+//                Image(systemName: "plus.circle")
+//            }))
             .sheet(isPresented: $showForm) {
                 AddView(showForm: $showForm, save: save)
             }
